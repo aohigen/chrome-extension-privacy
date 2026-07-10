@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — ClickPulse</title>
+<meta name="robots" content="all">
+<style>
+  :root { --text:#0f172a; --muted:#64748b; --border:#e2e8f0; --accent:#1e3a8a; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--text); background: #f8fafc;
+    font: 15px/1.75 -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 14px; margin-bottom: 8px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .brand { color: var(--accent); font-weight: 700; letter-spacing: .04em; }
+  .updated { color: var(--muted); font-size: 13px; }
+  h2 { font-size: 17px; margin: 28px 0 6px; }
+  p { margin: 6px 0; }
+  ul { margin: 6px 0; padding-left: 22px; }
+  li { margin: 3px 0; }
+  code { background: #eef2f7; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  a { color: var(--accent); }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 24px 26px; }
+  footer { color: var(--muted); font-size: 13px; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1><span class="brand">ClickPulse</span> プライバシーポリシー</h1>
+    <p class="updated">最終更新日: 2026-07-03 ／ 提供: 株式会社サードパーティートラスト（3PT）</p>
+  </header>
+
+  <div class="card">
+    <h2>収集する情報</h2>
+    <p>ClickPulse（以下「本拡張」）は、利用者の個人情報および閲覧データを<strong>一切収集・送信・保存しません</strong>。
+    本拡張のすべての処理は利用者のブラウザ内（ローカル）で完結し、外部サーバーへの通信は行いません。</p>
+
+    <h2>本拡張がアクセスする情報とその目的</h2>
+    <p>本拡張は、利用者が明示的に操作したタブのページ内容（リンク要素、その属性、<code>dataLayer</code> 等）を、
+    その場で解析して表示するためだけに読み取ります。読み取った内容は画面表示・CSV等の書き出しに使うのみで、
+    拡張の外部へ送信することはありません。書き出したファイルの保存先・内容は利用者が管理します。</p>
+
+    <h2>権限の利用目的</h2>
+    <ul>
+      <li><strong>activeTab / host_permissions（http, https）</strong>: 操作中のページに解析スクリプトを注入し、リンク・計測属性を読み取るため。</li>
+      <li><strong>scripting</strong>: 解析スクリプトおよび <code>dataLayer</code> 参照を実行するため。</li>
+      <li><strong>downloads</strong>: 解析結果のCSVをローカルに保存するため。</li>
+      <li><strong>clipboardWrite</strong>: セレクタやTSV/Markdownをクリップボードにコピーするため。</li>
+      <li><strong>sidePanel</strong>: 操作UIをサイドパネルに表示するため。</li>
+    </ul>
+
+    <h2>第三者提供</h2>
+    <p>ありません。本拡張はデータを収集しないため、第三者と共有するデータもありません。</p>
+
+    <h2>Chrome ウェブストアの限定使用要件</h2>
+    <p>本拡張による情報の使用は、Chrome ウェブストアのユーザーデータに関するポリシー（限定使用要件を含む）に準拠します。</p>
+
+    <h2>変更</h2>
+    <p>本ポリシーを更新する場合は、本ページの最終更新日を改訂します。</p>
+
+    <h2>お問い合わせ</h2>
+    <p>メール: <a href="mailto:uemura@3pt.co.jp">uemura@3pt.co.jp</a> ／ サイト: <a href="https://3pt.co.jp" target="_blank" rel="noopener">3pt.co.jp</a></p>
+  </div>
+
+  <footer>© 株式会社サードパーティートラスト（3PT）</footer>
+</main>
+</body>
+</html>

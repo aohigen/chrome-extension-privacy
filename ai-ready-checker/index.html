@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プライバシーポリシー — AI対応チェッカー by 3PT</title>
+<style>
+  :root { --ink:#202124; --sub:#5f6368; --line:#e0e0e0; --green:#1a9c5b; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 20px;
+    font-family: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    color: var(--ink); line-height: 1.8; background: #fff;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 0 80px; }
+  header { border-bottom: 3px solid var(--green); padding-bottom: 16px; margin-bottom: 8px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .lead { color: var(--sub); font-size: 14px; margin: 0; }
+  h2 { font-size: 18px; margin: 36px 0 10px; padding-left: 10px; border-left: 4px solid var(--green); }
+  h3 { font-size: 15px; margin: 20px 0 6px; }
+  p, li { font-size: 14.5px; }
+  ul { padding-left: 22px; }
+  .highlight {
+    background: #f2faf5; border: 1px solid #cfe9db; border-radius: 8px;
+    padding: 14px 18px; margin: 20px 0; font-size: 14.5px;
+  }
+  .highlight strong { color: var(--green); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13.5px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; white-space: nowrap; }
+  .meta { color: var(--sub); font-size: 13px; }
+  .en { margin-top: 64px; padding-top: 24px; border-top: 1px dashed var(--line); }
+  .en, .en p, .en li { color: #3c4043; }
+  a { color: var(--green); }
+  footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--sub); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>プライバシーポリシー</h1>
+  <p class="lead">Chrome拡張機能「AI対応チェッカー by 3PT」</p>
+</header>
+<p class="meta">最終更新日：2026年7月3日</p>
+
+<div class="highlight">
+  <p style="margin:0"><strong>要約：本拡張機能は、いかなる個人データも収集・保存・外部送信しません。</strong>すべての判定はあなたのブラウザ内だけで完結し、外部のサーバーへデータを送ることは一切ありません。アクセス解析（アナリティクス）やトラッキングも行いません。</p>
+</div>
+
+<h2>1. 本拡張機能について</h2>
+<p>「AI対応チェッカー by 3PT」（以下「本拡張機能」）は、現在表示しているWebページが生成AI（ChatGPT・Claude・Perplexity・Gemini 等）に読み取られる準備ができているかを、ツールバーのバッジ色で示すツールです。株式会社サードパーティートラスト（以下「当社」）が提供します。</p>
+
+<h2>2. 取得・処理する情報</h2>
+<p>本拡張機能は、判定を行うために、Chromeで読み込みが完了した判定対象のHTTPSページに関する以下の情報を、その場で読み取ります。これらはすべて<strong>あなたのブラウザ内での判定のためだけ</strong>に使われ、処理後にブラウザの外へ出ることはありません。</p>
+<table>
+  <tr><th>読み取る情報</th><th>目的</th></tr>
+  <tr><td>現在ページのURL</td><td>判定対象の識別、robots.txt / llms.txt の取得先の決定</td></tr>
+  <tr><td>現在ページのHTML・本文・見出し・構造化データ（JSON-LD）・メタタグ</td><td>本文の可読性、構造化データ、著者・日付、見出し構造の判定</td></tr>
+  <tr><td>現在ページと同一サイトの robots.txt / llms.txt / ページHTML</td><td>AIクローラのブロック状況、生HTMLの本文量、llms.txt の有無の確認</td></tr>
+  <tr><td>ページの応答時間・HTMLサイズの目安</td><td>ページの軽さの判定</td></tr>
+</table>
+<p>本拡張機能は、氏名・メールアドレス・パスワード・フォーム入力内容などの<strong>個人を特定できる情報を取得しません</strong>。Chromeの閲覧履歴APIにもアクセスしません。判定対象ページのURLは結果の識別とセッション内キャッシュにのみ使います。また、代表的な管理画面パスや localhost など、判定に適さないページは自動的に判定対象外（無判定）として扱います。</p>
+
+<h2>3. 情報の保存</h2>
+<p>判定結果（バッジ色と6項目の状態）は、Chromeの<strong>セッションストレージ（<code>chrome.storage.session</code>）</strong>に一時的に保存されます。これは同じページを短時間に何度も再判定しないためのキャッシュであり、<strong>ブラウザを閉じると自動的に消去されます</strong>。この情報はあなたの端末内にのみ存在し、外部には送信されません。</p>
+
+<h2>4. 情報の第三者提供・外部送信</h2>
+<p>本拡張機能は、読み取った情報や判定結果を、<strong>当社を含むいかなる第三者にも送信・提供・販売しません</strong>。外部のAPIやアナリティクスサービスとの通信も行いません。本拡張機能が行うネットワーク通信は、判定対象サイト自身の robots.txt・llms.txt・ページHTMLの取得に限られます。</p>
+
+<h2>5. 権限（パーミッション）について</h2>
+<p>本拡張機能が要求する権限と、その目的は以下のとおりです。</p>
+<table>
+  <tr><th>権限</th><th>目的</th></tr>
+  <tr><td><code>activeTab</code></td><td>利用者がツールバーから明示的に再判定・確認するとき、表示中ページへアクセスするため</td></tr>
+  <tr><td><code>scripting</code></td><td>ページ構造を読み取る小さなスクリプトを一時的に実行するため</td></tr>
+  <tr><td><code>storage</code></td><td>判定結果をセッション内で一時キャッシュするため</td></tr>
+  <tr><td><code>host_permissions</code>（全サイト）</td><td>読み込みが完了した判定対象ページを自動判定し、そのサイト自身の robots.txt / llms.txt / ページHTML を取得するため（取得先は判定対象サイトに限定）</td></tr>
+</table>
+
+<h2>6. 変更について</h2>
+<p>本ポリシーは、機能の変更や法令の改正に応じて更新されることがあります。重要な変更がある場合は、本ページ上で最終更新日を改めてお知らせします。</p>
+
+<h2>7. Chrome ウェブストアの限定使用要件</h2>
+<p>本拡張機能による情報の使用は、Chrome ウェブストアのユーザーデータに関するポリシー（限定使用要件を含む）に準拠します。</p>
+
+<h2>8. お問い合わせ</h2>
+<p>本ポリシーまたは本拡張機能に関するお問い合わせは、以下までご連絡ください。</p>
+<p>株式会社サードパーティートラスト（3PT）<br>
+Webサイト：<a href="https://3pt.co.jp" target="_blank" rel="noopener">https://3pt.co.jp</a><br>
+メール：<a href="mailto:uemura@3pt.co.jp">uemura@3pt.co.jp</a></p>
+
+<div class="en">
+<h2>Privacy Policy (English)</h2>
+<p class="meta">Last updated: July 3, 2026</p>
+<div class="highlight">
+  <p style="margin:0"><strong>Summary: This extension does not collect, store, or transmit any personal data.</strong> All analysis happens entirely within your browser. No data is ever sent to any external server, and there is no analytics or tracking.</p>
+</div>
+<p><strong>About.</strong> "AI対応チェッカー by 3PT" (AI Readiness Checker) is a tool that shows, via a toolbar badge, whether the page you are viewing is prepared to be read by generative AI crawlers (ChatGPT, Claude, Perplexity, Gemini, etc.). It is provided by Third Party Trust Inc. (3PT).</p>
+<p><strong>Information processed.</strong> To evaluate eligible HTTPS pages after they finish loading, the extension reads the page URL, its HTML/text/headings/structured data (JSON-LD)/meta tags, and the same site's robots.txt, llms.txt, and page HTML, plus a rough measure of response time and HTML size. It does <strong>not</strong> read personally identifiable information (names, emails, passwords, or form input) and does not access Chrome's browsing-history API. The evaluated URL is used only to identify and cache the result within the current browser session. Pages unsuitable for evaluation (e.g. common admin paths and localhost) are automatically excluded.</p>
+<p><strong>Storage.</strong> Evaluation results are cached temporarily in Chrome session storage (<code>chrome.storage.session</code>) to avoid re-evaluating the same page repeatedly, and are <strong>cleared automatically when the browser closes</strong>. This data stays on your device only.</p>
+<p><strong>No sharing or transmission.</strong> The extension does <strong>not</strong> send, share, or sell any read information or results to any third party, including 3PT. It performs no communication with external APIs or analytics services. Its only network requests are to fetch the evaluated site's own robots.txt, llms.txt, and page HTML.</p>
+<p><strong>Limited Use.</strong> The use of information received by this extension complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+<p><strong>Permissions.</strong> <code>activeTab</code> (access the visible page when you explicitly open or re-run the checker), <code>scripting</code> (temporarily run a small script to read page structure), <code>storage</code> (session-only cache of results), and host permissions (automatically evaluate eligible loaded pages and fetch that same site's robots.txt / llms.txt / page HTML).</p>
+<p><strong>Contact.</strong> Third Party Trust Inc. (3PT) — <a href="https://3pt.co.jp" target="_blank" rel="noopener">https://3pt.co.jp</a> — <a href="mailto:uemura@3pt.co.jp">uemura@3pt.co.jp</a></p>
+</div>
+
+<footer>
+  © 2026 株式会社サードパーティートラスト（Third Party Trust Inc.）
+</footer>
+
+</div>
+</body>
+</html>

@@ -38,7 +38,7 @@
   <div class="inner">
     <h1>プライバシーポリシー</h1>
     <div class="app">Screenshot Splitter — 縦横比分割スクリーンショット</div>
-    <div class="meta">最終更新日：2026年7月3日</div>
+    <div class="meta">最終更新日：2026年7月31日</div>
   </div>
 </header>
 
@@ -59,14 +59,15 @@
   <p>キャプチャした画像の取得・分割・エンコード・保存は、すべてお使いのブラウザ内で行われます。画像が当社や第三者のサーバーへ送信・アップロードされることは一切ありません。生成された画像は、利用者自身の操作によって利用者の端末へダウンロード保存されるのみです。</p>
 
   <h2>3. ローカルに保存される設定</h2>
-  <p>利用者が選んだ設定（分割方式・縦横比・出力形式など）を、利便性のためブラウザの <code>localStorage</code> に保存します。この情報は<strong>お使いの端末内にのみ</strong>保存され、外部へ送信されることはありません。拡張機能を削除すれば消去されます。</p>
+  <p>利用者が選んだ設定（分割方式・縦横比・出力形式など）を、利便性のため拡張機能のローカルストレージ（<code>chrome.storage.local</code>）に保存します。また、撮影直後の画像をプレビュー画面へ受け渡すため、拡張機能内の <code>IndexedDB</code> を一時的に使用します（最新の撮影1件のみを保持し、次回の撮影で上書きされます）。これらの情報は<strong>お使いの端末内にのみ</strong>保存され、外部へ送信されることはありません。拡張機能を削除すれば消去されます。</p>
 
   <h2>4. 権限の利用目的</h2>
   <table>
     <tr><th>権限</th><td>利用目的</td></tr>
     <tr><th><code>activeTab</code></th><td>利用者が「キャプチャ開始」を押したとき、現在アクティブなタブの表示内容を撮影するため。</td></tr>
-    <tr><th><code>scripting</code></th><td>ページの高さ・幅の計測、および撮影のためのスクロール制御を行うため。</td></tr>
-    <tr><th><code>downloads</code></th><td>生成した画像・ZIPファイルを利用者の端末に保存するため。</td></tr>
+    <tr><th><code>scripting</code></th><td>ページの高さ・幅の計測、撮影のためのスクロール制御、追従ヘッダー等の固定要素の一時的な非表示（撮影後に復元）を行うため。</td></tr>
+    <tr><th><code>downloads</code></th><td>生成した画像・ZIP・PowerPoint（.pptx）ファイルを利用者の端末に保存するため。</td></tr>
+    <tr><th><code>storage</code></th><td>分割設定を端末内に保存し、次回起動時やショートカット撮影時に再利用するため。</td></tr>
   </table>
   <p>スマホ幅撮影では追加権限を要求せず、Chromeウィンドウの幅を一時的に約390pxへ変更してレスポンシブ表示を撮影します。撮影後は元のウィンドウサイズへ戻します。UA（ユーザーエージェント）は変更しません。</p>
   <p>いずれの権限も、上記の機能提供のためだけに使用し、データの収集・送信には使用しません。</p>
@@ -97,12 +98,13 @@
     <h3>Screenshots</h3>
     <p>Capturing, splitting, encoding, and saving images all occur locally in your browser. No image is ever sent to our servers or any third party. Generated files are saved to your device only, by your own action.</p>
     <h3>Local settings</h3>
-    <p>Your chosen settings (split mode, aspect ratio, output format, etc.) are stored locally in the browser's <code>localStorage</code> for convenience. They never leave your device and are removed when you uninstall the extension.</p>
+    <p>Your chosen settings (split mode, aspect ratio, output format, etc.) are stored locally via <code>chrome.storage.local</code> for convenience. Captured slices are handed to the preview page through the extension's local <code>IndexedDB</code> (only the latest capture is kept and is overwritten by the next one). Nothing ever leaves your device, and everything is removed when you uninstall the extension.</p>
     <h3>Permissions</h3>
     <ul>
       <li><code>activeTab</code> — capture the current tab's content when you click "Start capture".</li>
-      <li><code>scripting</code> — measure page dimensions and control scrolling for capture.</li>
-      <li><code>downloads</code> — save generated images / ZIP files to your device.</li>
+      <li><code>scripting</code> — measure page dimensions, control scrolling for capture, and temporarily hide sticky elements (restored afterwards).</li>
+      <li><code>downloads</code> — save generated images / ZIP / PowerPoint (.pptx) files to your device.</li>
+      <li><code>storage</code> — keep your split settings on your device for reuse, including keyboard-shortcut capture.</li>
     </ul>
     <p>Mobile-width capture requires no additional permission. It temporarily resizes the Chrome window to approximately 390px wide, captures the responsive layout, and restores the original window size afterward. It does not change the user agent.</p>
     <p>These permissions are used solely to provide the above features, never to collect or transmit data.</p>
